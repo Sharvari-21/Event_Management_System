@@ -43,27 +43,6 @@ The Event Management System is a full-stack web application that enables users t
 * JWT Authentication
 * Nodemailer
 
-## Project Structure
-
-backend/
-├── config/
-├── controllers/
-├── middleware/
-├── models/
-├── routes/
-├── validators/
-├── utils/
-└── server.js
-
-frontend/
-├── src/
-│ ├── api/
-│ ├── components/
-│ ├── context/
-│ ├── pages/
-│ └── utils/
-└── vite.config.js
-
 ## Setup Instructions
 
 ### Prerequisites
