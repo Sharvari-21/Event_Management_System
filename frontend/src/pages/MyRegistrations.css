@@ -1,0 +1,57 @@
+.my-reg-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.my-reg-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+}
+
+.my-reg-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.my-reg-title {
+  font-weight: 600;
+  font-size: 1.02rem;
+}
+
+.my-reg-title:hover {
+  color: var(--primary);
+}
+
+.my-reg-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 0.84rem;
+  color: var(--ink-soft);
+}
+
+.my-reg-actions {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .my-reg-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .my-reg-actions {
+    justify-content: flex-end;
+  }
+}

@@ -1,0 +1,69 @@
+.attendee-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.attendee-list-header h4 {
+  font-size: 1rem;
+}
+
+.attendee-list ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.attendee-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  border-radius: var(--radius-sm);
+}
+
+.attendee-row:hover {
+  background: var(--surface-soft);
+}
+
+.attendee-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+  font-family: var(--font-display);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.attendee-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.attendee-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.attendee-email {
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.attendee-empty {
+  text-align: center;
+  padding: 28px 0;
+  color: var(--ink-faint);
+  font-size: 0.88rem;
+}

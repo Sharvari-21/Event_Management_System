@@ -1,0 +1,23 @@
+.category-filter {
+  padding: 10px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 0.88rem;
+  font-weight: 500;
+  min-width: 160px;
+}
+
+.category-filter:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-soft);
+}
+
+@media (max-width: 640px) {
+  .category-filter {
+    min-width: 0;
+    width: 100%;
+  }
+}

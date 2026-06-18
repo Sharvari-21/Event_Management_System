@@ -20,7 +20,7 @@ const validateRequest = require("../middleware/validateMiddleware");
 const {
   eventValidator,
   eventUpdateValidator,
-} = require("../validators/eventValidator");
+} = require("../validators/eventValidator.js");
 
 // Public listing/search (optionalAuth attaches req.user if a valid token is sent)
 router.get("/", optionalAuth, getEvents);
