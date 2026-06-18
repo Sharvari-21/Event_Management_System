@@ -1,3 +1,4 @@
+import { sendRegistrationEmail } from "../utils/emailService";
 import { useCallback, useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { getEventByIdApi, deleteEventApi, getEventAttendeesApi } from "../api/eventApi";
@@ -55,17 +56,36 @@ const EventDetails = () => {
   }, [isAuthenticated, fetchAttendees]);
 
   const handleRegister = async () => {
-    setActionLoading(true);
-    try {
-      await registerForEventApi(id);
-      showToast("You're registered for this event!");
-      await Promise.all([fetchEvent(), fetchAttendees()]);
-    } catch (err) {
-      showToast(getErrorMessage(err), "error");
-    } finally {
-      setActionLoading(false);
+  setActionLoading(true);
+
+  try {
+    await registerForEventApi(id);
+
+    // Get logged-in user info
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    if (user?.email) {
+      await sendRegistrationEmail(
+        user.name,
+        user.email,
+        event.title,
+        formatDate(event.date),
+        event.location
+      );
     }
-  };
+
+    showToast("You're registered for this event!");
+
+    await Promise.all([
+      fetchEvent(),
+      fetchAttendees()
+    ]);
+  } catch (err) {
+    showToast(getErrorMessage(err), "error");
+  } finally {
+    setActionLoading(false);
+  }
+};
 
   const handleCancel = async () => {
     setActionLoading(true);
